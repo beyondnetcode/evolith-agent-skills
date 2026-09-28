@@ -1,0 +1,272 @@
+{
+  "esquema": 1,
+  "categorias": [
+    {
+      "id": "arquitectura",
+      "nombre": "Arquitectura",
+      "descripcion": "Decisiones estructurales: estilos y topologías, consistencia entre componentes y revisión de riesgos de diseño."
+    },
+    {
+      "id": "datos",
+      "nombre": "Datos",
+      "descripcion": "Modelado, persistencia, rendimiento de bases de datos y elección o migración de motores."
+    },
+    {
+      "id": "operacion",
+      "nombre": "Operación",
+      "descripcion": "Resiliencia, capacidad, despliegue y comportamiento del software en producción."
+    },
+    {
+      "id": "apis",
+      "nombre": "APIs y contratos",
+      "descripcion": "Contratos de integración: evolución y versionado, semántica HTTP, formatos de fecha y datos."
+    },
+    {
+      "id": "seguridad",
+      "nombre": "Seguridad",
+      "descripcion": "Seguridad de aplicaciones: autenticación, sesiones y tokens, validación de entradas y archivos."
+    },
+    {
+      "id": "codigo",
+      "nombre": "Código",
+      "descripcion": "Diseño de código: principios, abstracciones justificadas y complejidad algorítmica."
+    },
+    {
+      "id": "ia",
+      "nombre": "IA",
+      "descripcion": "Diseño de sistemas y agentes con LLMs: contexto, tokens, memoria y costes."
+    },
+    {
+      "id": "comunicacion",
+      "nombre": "Comunicación",
+      "descripcion": "Comunicar decisiones técnicas: ADRs, postmortems, propuestas y explicaciones para cualquier audiencia."
+    }
+  ],
+  "skills": [
+    {
+      "name": "contratos-api",
+      "categoria": "apis",
+      "description": "Criterio para diseñar, evolucionar y revisar contratos de API HTTP — breaking changes (incluidos los semánticos que responden 200 OK), versionado por URL, header, query o media type, expand/contract y tolerant reader, deprecación y sunset (headers Deprecation y Sunset), OpenAPI y diff de contratos, códigos de estado correctos (401 vs 403, 404 vs 410, 409/412/422, 429, 500/502/503/504), errores consistentes con Problem Details (RFC 9457) y fechas sin ambigüedad (UTC, instante vs fecha civil vs hora local con zona IANA, DST, epoch en segundos o milisegundos, timestamptz). Úsala siempre que un diseño, PR, ADR o incidente toque endpoints, integraciones B2B o apps móviles, renombrar o quitar campos, cambiar unidades o enums, publicar una v2 o retirar una versión, definir respuestas de error o políticas de reintento, o guardar, transmitir o mostrar fechas y horas (agendas, cobros recurrentes, reportes por día, zonas horarias, cambio de horario), aunque el usuario no nombre el patrón.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 32, 35, 37",
+      "relacionadas": [
+        "seguridad-aplicaciones",
+        "estilos-arquitectonicos",
+        "resiliencia-operacion"
+      ],
+      "ruta": "skills/apis/contratos-api/SKILL.md",
+      "recursos": [
+        "references/32-versionado-de-api.md",
+        "references/35-utc-y-fechas.md",
+        "references/37-codigos-http.md"
+      ]
+    },
+    {
+      "name": "consistencia-distribuida",
+      "categoria": "arquitectura",
+      "description": "Criterio de arquitecto para consistencia y mensajería en sistemas distribuidos — Outbox, Inbox/deduplicación, idempotencia, Saga (orquestación vs coreografía), CQRS, Dead Letter Queue, webhooks, consistencia eventual, read-your-writes, race conditions, locks distribuidos y reservas de recursos escasos. Úsala siempre que un diseño, ADR, PR o incidente involucre guardar y publicar eventos, flujos que cruzan varios servicios o bases, colas/brokers (Kafka, RabbitMQ, SQS, Service Bus), reintentos, cobros o stock duplicados, datos que \"cambian al refrescar\", doble venta, o la pregunta \"¿cómo garantizo que esto pase exactamente una vez?\", aunque el usuario no nombre el patrón.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 11, 23, 24, 26, 27, 28, 29, 33, 34",
+      "relacionadas": [
+        "datos-persistencia",
+        "resiliencia-operacion",
+        "radar-arquitectura"
+      ],
+      "ruta": "skills/arquitectura/consistencia-distribuida/SKILL.md",
+      "recursos": [
+        "references/11-reservas-globales.md",
+        "references/23-consistencia-eventual.md",
+        "references/24-dead-letter-queue.md",
+        "references/26-cqrs.md",
+        "references/27-saga.md",
+        "references/28-outbox.md",
+        "references/29-webhooks-duplicados.md",
+        "references/33-race-conditions.md",
+        "references/34-idempotencia.md"
+      ]
+    },
+    {
+      "name": "estilos-arquitectonicos",
+      "categoria": "arquitectura",
+      "description": "Criterio de arquitecto para elegir estilos y topologías — monolito modular vs microservicios, microfrontends (iframes, Module Federation), API Gateway y BFF, fan-out on write vs on read para feeds y seguidores, modelo de actores (Erlang/BEAM) para millones de conexiones, y tiempo real (polling, long polling, SSE, WebSocket) — con casos reales (Spotify, Twitter/Instagram, WhatsApp, Prime Video, Uber). Úsala siempre que se discuta cómo partir o no un sistema, si \"migrar a microservicios\", cómo servir un feed o timeline, cómo empujar datos en vivo al navegador, cómo exponer servicios a clientes, o cómo diseñar un sistema estilo red social o chat, aunque el usuario no use estos términos.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 08, 14, 15, 18, 22, 46",
+      "relacionadas": [
+        "consistencia-distribuida",
+        "resiliencia-operacion",
+        "radar-arquitectura"
+      ],
+      "ruta": "skills/arquitectura/estilos-arquitectonicos/SKILL.md",
+      "recursos": [
+        "references/08-monolito-vs-microservicios.md",
+        "references/14-microfrontends-iframes-spotify.md",
+        "references/15-fan-out-seguidores.md",
+        "references/18-whatsapp-erlang.md",
+        "references/22-polling-websocket-sse.md",
+        "references/46-api-gateway.md"
+      ]
+    },
+    {
+      "name": "radar-arquitectura",
+      "categoria": "arquitectura",
+      "description": "Punto de entrada del arquitecto para diagnosticar incidentes de producción y revisar diseños, PRs o repositorios en busca de riesgos arquitectónicos, con el método de TheDebugDuck (síntoma → rastro → mecanismo → solución en capas → verificación). Incluye un índice síntoma → causa probable → skill especializada y un escáner de señales de código (OFFSET, UUIDv4 como PK, await en bucle, Promise.all sin límite, dual write, webhooks sin firma, JWT en localStorage, regex peligrosas, manifiestos sin límites). Úsala siempre que el usuario pregunte \"¿por qué se cae/está lento/duplica/pierde datos?\", pida una revisión de arquitectura, un design review antes de salir a producción, una auditoría de riesgos de un repo o PR, o un postmortem técnico, aunque no mencione arquitectura.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck (48 videos)",
+      "relacionadas": [
+        "datos-persistencia",
+        "consistencia-distribuida",
+        "resiliencia-operacion",
+        "estilos-arquitectonicos",
+        "contratos-api",
+        "seguridad-aplicaciones",
+        "diseno-de-codigo",
+        "sistemas-con-ia",
+        "comunicar-decisiones"
+      ],
+      "ruta": "skills/arquitectura/radar-arquitectura/SKILL.md",
+      "recursos": [
+        "references/indice-videos.md",
+        "scripts/escanear_senales.py"
+      ]
+    },
+    {
+      "name": "diseno-de-codigo",
+      "categoria": "codigo",
+      "description": "Criterio para diseñar y revisar código barato de cambiar — SOLID (SRP por actor, OCP, LSP por contratos, ISP, DIP) aplicado con evidencia, abstracción justificada frente a sobreingeniería (YAGNI, regla de tres, singletons, interfaces con una sola implementación, patrones GoF) y complejidad algorítmica (Big O temporal, espacial y amortizada; N+1, OFFSET, regex con backtracking, bucles anidados). Úsala siempre que haya code review de diseño, refactors, abstracciones o interfaces nuevas, herencia y clases base, inyección de dependencias o contenedores IoC, patrones (Strategy, Factory, Observer, Singleton), debates de \"código limpio\", código generado por IA \"extensible\", switch/if que crecen con cada funcionalidad, clases gigantes, tests difíciles de escribir o código que se vuelve lento al crecer los datos, aunque el usuario no nombre SOLID ni Big O.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 07, 39, 40, 41, 42, 43, 44, 45",
+      "relacionadas": [
+        "radar-arquitectura",
+        "estilos-arquitectonicos",
+        "datos-persistencia"
+      ],
+      "ruta": "skills/codigo/diseno-de-codigo/SKILL.md",
+      "recursos": [
+        "references/07-codigo-limpio-pragmatico.md",
+        "references/39-complejidad-big-o.md",
+        "references/40-solid-panorama.md",
+        "references/41-solid-dip.md",
+        "references/42-solid-isp.md",
+        "references/43-solid-lsp.md",
+        "references/44-solid-ocp.md",
+        "references/45-solid-srp.md"
+      ]
+    },
+    {
+      "name": "comunicar-decisiones",
+      "categoria": "comunicacion",
+      "description": "Técnica narrativa de TheDebugDuck para explicar decisiones y riesgos de arquitectura — incidente concreto como gancho, \"todo está verde pero algo falla\", modo detective siguiendo un ID, metáfora visual cotidiana, mecanismo real, solución en capas, trade-offs y checklist final de preguntas antes del próximo deploy. Úsala siempre que haya que redactar el contexto o las consecuencias de un ADR, un postmortem, una propuesta técnica para gerencia o negocio, la descripción de un PR arquitectónico, material de onboarding, o explicar un concepto técnico (consistencia eventual, idempotencia, backpressure…) a alguien que no es especialista, o cuando el usuario pida \"explícamelo fácil\", \"con una analogía\" o \"para que lo entienda el equipo\".",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck (estructura narrativa y metáforas de los 48 videos)",
+      "relacionadas": [
+        "radar-arquitectura"
+      ],
+      "ruta": "skills/comunicacion/comunicar-decisiones/SKILL.md",
+      "recursos": [
+        "references/catalogo-metaforas.md",
+        "references/frases-guia.md"
+      ]
+    },
+    {
+      "name": "datos-persistencia",
+      "categoria": "datos",
+      "description": "Criterio de arquitecto para persistencia y rendimiento de datos — paginación OFFSET vs keyset/cursor, elección de identificadores (bigint, UUIDv4, UUIDv7, Snowflake, ID público opaco), índices y coste de escritura, ORM bien usado (N+1, explosión cartesiana, proyecciones), pool de conexiones y proxies, event sourcing vs UPDATE, y elección/migración de motor (Cassandra → ScyllaDB en Discord). Úsala siempre que un diseño, esquema, migración, PR o incidente toque tablas grandes, consultas lentas, CPU/I/O de base de datos, \"funciona en local pero no en producción\", timeouts 504 con la BD tranquila, claves primarias, índices nuevos, ORMs (Hibernate/JPA, EF Core, Prisma, TypeORM, Django) o auditoría de historial, aunque el usuario no nombre el patrón.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 01, 03, 06, 09, 13, 16, 17, 25, 36",
+      "relacionadas": [
+        "consistencia-distribuida",
+        "resiliencia-operacion",
+        "radar-arquitectura"
+      ],
+      "ruta": "skills/datos/datos-persistencia/SKILL.md",
+      "recursos": [
+        "references/01-paginacion-offset-vs-keyset.md",
+        "references/03-uuid-y-rendimiento-de-indices.md",
+        "references/06-orm-bien-usado.md",
+        "references/09-bd-miles-de-usuarios.md",
+        "references/13-rendimiento-de-insert.md",
+        "references/16-ids-snowflake-instagram.md",
+        "references/17-discord-cassandra-scylla.md",
+        "references/25-peligro-del-update.md",
+        "references/36-n-mas-1.md"
+      ]
+    },
+    {
+      "name": "sistemas-con-ia",
+      "categoria": "ia",
+      "description": "Criterio de arquitecto para diseñar sistemas y agentes con LLMs tratando contexto y tokens como recursos finitos y caros — ventana de contexto, estado y memoria de corto y largo plazo, RAG y recuperación, carga progresiva, compactación, recorte de resultados de herramientas, subagentes, degradación en contextos largos (lost in the middle, context rot), orden de instrucciones, prompt caching, inyección de prompts vía contenido recuperado, tokenización, límites de entrada y salida, coste, presupuestos y observabilidad del consumo. Úsala siempre que un diseño, ADR, PR o incidente involucre agentes, RAG, memoria conversacional, asistentes con herramientas o MCP, prompts largos, elegir qué meter en el contexto, presupuestar tokens o costes de un LLM, o síntomas como \"el agente olvida\", \"alucina con documentos largos\", \"se encarece\", \"responde cortado\" o \"ignora el system prompt\", aunque el usuario no hable de tokens ni de contexto.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 47, 48",
+      "relacionadas": [
+        "comunicar-decisiones",
+        "radar-arquitectura",
+        "resiliencia-operacion"
+      ],
+      "ruta": "skills/ia/sistemas-con-ia/SKILL.md",
+      "recursos": [
+        "references/47-contexto-en-agentes-ia.md",
+        "references/48-tokens-en-ia.md"
+      ]
+    },
+    {
+      "name": "resiliencia-operacion",
+      "categoria": "operacion",
+      "description": "Criterio de arquitecto para resiliencia, capacidad y operación en producción — circuit breaker, timeouts, reintentos con backoff y jitter, bulkheads, rate limiting (token/leaky bucket), load balancing, health checks, cache stampede, filas virtuales para picos, despliegues sin downtime (rolling, blue/green, canary, expand/contract), memoria en contenedores (OOMKilled, heap vs RSS), concurrencia async acotada y ReDoS. Úsala siempre que un diseño, ADR, PR, manifiesto de Kubernetes o incidente trate de caídas bajo carga, picos de tráfico, dependencias lentas, pods reiniciados, latencias que crecen, despliegues riesgosos o \"subimos servidores y sigue cayendo\", aunque el usuario no nombre el patrón.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 04, 05, 10, 19, 20, 21, 30, 31, 38",
+      "relacionadas": [
+        "consistencia-distribuida",
+        "seguridad-aplicaciones",
+        "radar-arquitectura"
+      ],
+      "ruta": "skills/operacion/resiliencia-operacion/SKILL.md",
+      "recursos": [
+        "references/04-heap-vs-rss-oomkilled.md",
+        "references/05-async-no-es-paralelo.md",
+        "references/10-regex-redos.md",
+        "references/19-load-balancing.md",
+        "references/20-despliegues-sin-downtime.md",
+        "references/21-filas-virtuales.md",
+        "references/30-cache-stampede.md",
+        "references/31-circuit-breaker.md",
+        "references/38-rate-limiting.md"
+      ]
+    },
+    {
+      "name": "seguridad-aplicaciones",
+      "categoria": "seguridad",
+      "description": "Criterio de diseño seguro para aplicaciones — validación de archivos subidos (magic bytes, Content-Type decidido por el servidor, nosniff, attachment, dominio sandbox, cuarentena, políglotas, SVG/HTML/Office/PDF) y autenticación con tokens (JWT de vida corta, refresh revocable y rotado, cookies HttpOnly/Secure/SameSite, BFF, sesiones de servidor, revocación al cambiar contraseña o cerrar sesión en todos los dispositivos). Úsala siempre que un diseño, PR o incidente toque carga o descarga de archivos, previsualización de adjuntos, login, logout, JWT, OAuth, almacenamiento de tokens en el navegador, \"el usuario cambió la contraseña y el atacante sigue dentro\", o código de autenticación o subida generado por IA, aunque el usuario no hable de seguridad.",
+      "version": "1.0.0",
+      "fuentes": "TheDebugDuck: 02, 12",
+      "relacionadas": [
+        "contratos-api",
+        "resiliencia-operacion",
+        "consistencia-distribuida"
+      ],
+      "ruta": "skills/seguridad/seguridad-aplicaciones/SKILL.md",
+      "recursos": [
+        "references/02-validacion-de-archivos.md",
+        "references/12-jwt-diseno-seguro.md"
+      ]
+    }
+  ],
+  "agentes": [
+    {
+      "name": "arquitecto",
+      "description": "Arquitecto de software pragmático entrenado con el catálogo de TheDebugDuck (48 casos de producción). Úsalo para diagnosticar incidentes (lentitud, caídas, duplicados, pérdidas de datos), revisar diseños, PRs o repositorios en busca de riesgos, decidir topologías y patrones (monolito vs microservicios, Outbox, Saga, CQRS, caché, colas), y redactar ADRs o postmortems con trade-offs explícitos.",
+      "ruta": "agents/arquitecto.md",
+      "skills": [
+        "radar-arquitectura",
+        "estilos-arquitectonicos",
+        "consistencia-distribuida",
+        "datos-persistencia",
+        "resiliencia-operacion",
+        "contratos-api",
+        "seguridad-aplicaciones",
+        "diseno-de-codigo",
+        "sistemas-con-ia",
+        "comunicar-decisiones"
+      ]
+    }
+  ]
+}

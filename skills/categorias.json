@@ -1,0 +1,42 @@
+[
+  {
+    "id": "arquitectura",
+    "nombre": "Arquitectura",
+    "descripcion": "Decisiones estructurales: estilos y topologías, consistencia entre componentes y revisión de riesgos de diseño."
+  },
+  {
+    "id": "datos",
+    "nombre": "Datos",
+    "descripcion": "Modelado, persistencia, rendimiento de bases de datos y elección o migración de motores."
+  },
+  {
+    "id": "operacion",
+    "nombre": "Operación",
+    "descripcion": "Resiliencia, capacidad, despliegue y comportamiento del software en producción."
+  },
+  {
+    "id": "apis",
+    "nombre": "APIs y contratos",
+    "descripcion": "Contratos de integración: evolución y versionado, semántica HTTP, formatos de fecha y datos."
+  },
+  {
+    "id": "seguridad",
+    "nombre": "Seguridad",
+    "descripcion": "Seguridad de aplicaciones: autenticación, sesiones y tokens, validación de entradas y archivos."
+  },
+  {
+    "id": "codigo",
+    "nombre": "Código",
+    "descripcion": "Diseño de código: principios, abstracciones justificadas y complejidad algorítmica."
+  },
+  {
+    "id": "ia",
+    "nombre": "IA",
+    "descripcion": "Diseño de sistemas y agentes con LLMs: contexto, tokens, memoria y costes."
+  },
+  {
+    "id": "comunicacion",
+    "nombre": "Comunicación",
+    "descripcion": "Comunicar decisiones técnicas: ADRs, postmortems, propuestas y explicaciones para cualquier audiencia."
+  }
+]

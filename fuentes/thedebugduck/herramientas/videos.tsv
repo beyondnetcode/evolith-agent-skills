@@ -1,0 +1,48 @@
+01	Es25hxA4A64	El error de paginar con OFFSET cuando tu tabla supera el millón de registros
+02	olhSxQL8GYc	Crees que sabes validar archivos hasta que te pasa esto
+03	KiuZT8XYYdw	El error con UUIDs que destruye el rendimiento de tu Base de Datos
+04	Y4ykSwM71bA	La MENTIRA del Heap vs. RSS: Por qué tu pod muere con OOMKilled
+05	97p_mrF6_bA	Tu async no es paralelo: El error que deja tu Checkout en 8 segundos
+06	sOsCAIbhxOY	Tu ORM no es lento, lo estás usando mal
+07	NTA6Nt2TSNw	Por qué tu código "Limpio" está ARRUINANDO el proyecto
+08	JgrsAyefLFU	La MENTIRA de los Microservicios desde el Día 1 (Monolito vs Microservicios)
+09	UJnsiQk11Dc	El secreto para que tu Base de Datos soporte miles de usuarios
+10	G_nth-0hbLA	Esta Regex de 11 caracteres tumbó medio Internet
+11	O9w-cFf21lg	Dos personas, misma habitación: Arquitectura de Reservas Globales
+12	DjwejUgsu5I	El grave error de diseño con JWT que expone tus contraseñas
+13	-QIMNVAE2c0	El error con Bases de Datos que destruye el rendimiento de tus INSERT
+14	fQbzSQosVh8	La polémica arquitectura de Spotify: Microfrontends con IFRAMES
+15	fCf6_aVkz9w	La arquitectura detrás de cuentas con millones de seguidores
+16	-8WFjecvWQU	Cómo Instagram genera 1.000.000 de IDs por segundo sin colisiones (Snowflake + Postgres)
+17	_LTWThujNwk	Discord vs. Trillones de mensajes: ¿Por qué falló Cassandra?
+18	RpKzma-EDG0	Cómo 50 ingenieros soportaron 900 millones de usuarios (WhatsApp y Erlang)
+19	o0kv2-GOBdU	Por qué tu app se cae aunque metas servidores más grandes (Load Balancing)
+20	0QsGouoEy-k	Cómo actualizar tu app en producción SIN que los usuarios lo noten
+21	dPBVU-JnYzs	Filas virtuales: la ingeniería detrás de ventas que no se caen
+22	D2-BNfHcD8M	¿Cómo actualizar tu app en vivo sin F5? Polling, WebSocket y SSE explicados
+23	v3I_C5UwpcI	¿Por qué tu API muestra datos distintos al refrescar? Explicando consistencia eventual
+24	A9EsyymseL8	Dead Letter Queue explicada: el mensaje que paró la fábrica
+25	7nVmbbiszqY	Por qué hacer un "UPDATE" en tu base de datos es un peligro
+26	srn3gx_Ot0k	¿Por qué separar lecturas y escrituras? | CQRS explicado fácil
+27	Gbm64asnDsI	Saga Pattern explicado fácil | El rollback de microservicios
+28	aWUpXYlypYA	Outbox Pattern: cómo evitar perder eventos en producción
+29	fF4O4Jqkc0g	Webhooks: el bug silencioso que DUPLICA eventos en producción
+30	YIMF4w7PFpM	¿Qué es Cache Stampede y por qué rompe sistemas?
+31	krvH-jiE1m0	Circuit Breaker explicado fácil (el salvavidas de las APIs)
+32	hJiCokA2Sps	API Versioning explicado: 200 OK pero el contrato cambió
+33	mEc5a36Mg3Q	Race Conditions explicado: 1 unidad, 2 ventas
+34	DGSsZ1PWlr0	El patrón que evita DOBLES COBROS en APIs (Idempotencia explicada fácil)
+35	YHHhS37JABg	¿Por qué TODO está en UTC? (explicado fácil)
+36	T3zUdZGe7mk	¿Por qué tu API está lenta? (N+1 explicado fácil)
+37	o9WXg3gq64c	¿Qué significan los códigos HTTP? (explicado fácil)
+38	LfyObrcgvT8	¿Por qué tu API se cae? (Rate Limiting explicado fácil)
+39	vVrI4bQMZhE	Complejidad Algorítmica explicada fácil (Big O en minutos)
+40	0XBA8X4qvEA	SOLID explicado en 10 minutos (fácil y claro)
+41	TEuVwJDmmnc	SOLID explicado fácil: Dependency Inversion Principle (DIP)
+42	NhivsfJ2GkE	SOLID explicado fácil: Interface Segregation Principle (ISP)
+43	DAlfu9_h6FE	SOLID explicado fácil: Liskov Substitution Principle (LSP)
+44	m_suSqqpBG4	SOLID explicado fácil: Open/Closed Principle (OCP)
+45	1pXHglGZY9A	SOLID explicado fácil: Single Responsibility Principle (SRP)
+46	cxN_vkyZuto	¿Qué es un API Gateway? (explicado fácil)
+47	B5hqbG59kAQ	El SECRETO de la IA: cómo funciona el CONTEXTO en agentes (explicado fácil)
+48	NYRsNFvHciI	¿Qué son los tokens en IA? (explicado fácil)

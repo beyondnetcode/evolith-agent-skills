@@ -1,0 +1,20 @@
+{
+  "name": "evolith-skills",
+  "version": "1.0.0",
+  "description": "Biblioteca de skills y agentes reutilizables: arquitectura, datos, operación, APIs, seguridad, código, IA y comunicación de decisiones. Formato Agent Skills (SKILL.md) legible por cualquier LLM.",
+  "author": { "name": "BeyondNet Tech" },
+  "homepage": "https://github.com/beyondnetcode/evolith-agent-skills",
+  "repository": "https://github.com/beyondnetcode/evolith-agent-skills",
+  "license": "MIT",
+  "keywords": ["skills", "arquitectura", "system-design", "adr", "resiliencia", "base-de-datos", "agentes"],
+  "skills": [
+    "./skills/arquitectura/",
+    "./skills/datos/",
+    "./skills/operacion/",
+    "./skills/apis/",
+    "./skills/seguridad/",
+    "./skills/codigo/",
+    "./skills/ia/",
+    "./skills/comunicacion/"
+  ]
+}
