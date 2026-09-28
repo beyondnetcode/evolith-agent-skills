@@ -1,0 +1,51 @@
+# evolith-agent-skills
+
+> Biblioteca de skills y agentes para cualquier LLM o agente de código. Cada skill es una carpeta con SKILL.md (frontmatter name/description + instrucciones) y recursos bajo demanda en references/ y scripts/. Lee AGENTS.md para el protocolo de uso.
+
+Protocolo: 1) elige la skill cuya description encaje con la tarea; 2) lee su SKILL.md completo; 3) abre solo las references que el SKILL.md indique para el caso; 4) aplica su formato de salida.
+
+## Arquitectura
+
+- [consistencia-distribuida](skills/arquitectura/consistencia-distribuida/SKILL.md): Criterio de arquitecto para consistencia y mensajería en sistemas distribuidos — Outbox, Inbox/deduplicación, idempotencia, Saga (orquestación vs coreografía), CQRS, Dead Letter Queue, webhooks, consistencia eventual, read-your-writes, race conditions,…
+- [estilos-arquitectonicos](skills/arquitectura/estilos-arquitectonicos/SKILL.md): Criterio de arquitecto para elegir estilos y topologías — monolito modular vs microservicios, microfrontends (iframes, Module Federation), API Gateway y BFF, fan-out on write vs on read para feeds y seguidores, modelo de actores (Erlang/BEAM) para millones…
+- [radar-arquitectura](skills/arquitectura/radar-arquitectura/SKILL.md): Punto de entrada del arquitecto para diagnosticar incidentes de producción y revisar diseños, PRs o repositorios en busca de riesgos arquitectónicos, con el método de TheDebugDuck (síntoma → rastro → mecanismo → solución en capas → verificación). Incluye…
+
+## Datos
+
+- [datos-persistencia](skills/datos/datos-persistencia/SKILL.md): Criterio de arquitecto para persistencia y rendimiento de datos — paginación OFFSET vs keyset/cursor, elección de identificadores (bigint, UUIDv4, UUIDv7, Snowflake, ID público opaco), índices y coste de escritura, ORM bien usado (N+1, explosión…
+
+## Operación
+
+- [resiliencia-operacion](skills/operacion/resiliencia-operacion/SKILL.md): Criterio de arquitecto para resiliencia, capacidad y operación en producción — circuit breaker, timeouts, reintentos con backoff y jitter, bulkheads, rate limiting (token/leaky bucket), load balancing, health checks, cache stampede, filas virtuales para…
+
+## APIs y contratos
+
+- [contratos-api](skills/apis/contratos-api/SKILL.md): Criterio para diseñar, evolucionar y revisar contratos de API HTTP — breaking changes (incluidos los semánticos que responden 200 OK), versionado por URL, header, query o media type, expand/contract y tolerant reader, deprecación y sunset (headers…
+
+## Seguridad
+
+- [seguridad-aplicaciones](skills/seguridad/seguridad-aplicaciones/SKILL.md): Criterio de diseño seguro para aplicaciones — validación de archivos subidos (magic bytes, Content-Type decidido por el servidor, nosniff, attachment, dominio sandbox, cuarentena, políglotas, SVG/HTML/Office/PDF) y autenticación con tokens (JWT de vida…
+
+## Código
+
+- [diseno-de-codigo](skills/codigo/diseno-de-codigo/SKILL.md): Criterio para diseñar y revisar código barato de cambiar — SOLID (SRP por actor, OCP, LSP por contratos, ISP, DIP) aplicado con evidencia, abstracción justificada frente a sobreingeniería (YAGNI, regla de tres, singletons, interfaces con una sola…
+
+## IA
+
+- [sistemas-con-ia](skills/ia/sistemas-con-ia/SKILL.md): Criterio de arquitecto para diseñar sistemas y agentes con LLMs tratando contexto y tokens como recursos finitos y caros — ventana de contexto, estado y memoria de corto y largo plazo, RAG y recuperación, carga progresiva, compactación, recorte de…
+
+## Comunicación
+
+- [comunicar-decisiones](skills/comunicacion/comunicar-decisiones/SKILL.md): Técnica narrativa de TheDebugDuck para explicar decisiones y riesgos de arquitectura — incidente concreto como gancho, "todo está verde pero algo falla", modo detective siguiendo un ID, metáfora visual cotidiana, mecanismo real, solución en capas,…
+
+## Agentes
+
+- [arquitecto](agents/arquitecto.md): Arquitecto de software pragmático entrenado con el catálogo de TheDebugDuck (48 casos de producción). Úsalo para diagnosticar incidentes (lentitud, caídas, duplicados, pérdidas de datos), revisar diseños, PRs o repositorios en busca de riesgos, decidir topologías y patrones (monolito vs microservicios, Outbox, Saga, CQRS, caché, colas), y redactar ADRs o postmortems con trade-offs explícitos.
+
+## Documentación
+
+- [Protocolo para agentes](AGENTS.md): cómo descubrir y aplicar skills
+- [Integración por herramienta](docs/integracion.md): Claude Code, Codex, Copilot, Cursor, Gemini y chats
+- [Estándar de skills](docs/estandar-de-skills.md): cómo escribir y validar una skill nueva
+- [Fuentes](fuentes/README.md): origen y trazabilidad del conocimiento
+- [Catálogo JSON](catalog.json): índice legible por máquinas

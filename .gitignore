@@ -141,3 +141,12 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Sistema y Python
+.DS_Store
+__pycache__/
+*.pyc
+
+# Transcripciones descargadas (material de trabajo, no se versiona)
+transcripciones/
+.venv/

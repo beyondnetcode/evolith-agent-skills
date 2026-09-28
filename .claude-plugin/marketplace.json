@@ -1,0 +1,14 @@
+{
+  "name": "evolith",
+  "description": "Marketplace de BeyondNet Tech: skills y agentes reutilizables para trabajar con IA en cualquier proyecto.",
+  "owner": {
+    "name": "BeyondNet Tech"
+  },
+  "plugins": [
+    {
+      "name": "evolith-skills",
+      "source": "./",
+      "description": "Skills y agentes reutilizables para trabajar con IA en cualquier proyecto."
+    }
+  ]
+}
